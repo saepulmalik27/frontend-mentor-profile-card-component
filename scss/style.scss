@@ -1,0 +1,146 @@
+@import "./fonts";
+@import "./colors";
+@import "./typo";
+@import "./breakpoints";
+@import "./mixins";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: $Dark-cyan;
+  max-width: $max-container;
+  max-height: 800px;
+  @include media-min-width($max-container) {
+    margin: 0 auto;
+    max-height: 956px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: transparent;
+  @include media-max-width($s-mobile-breakpoint){
+    padding : 0 5vw;
+  }
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  width: 351px;
+  height: 373px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+
+  &_header {
+    width: 100%;
+    height: 140px;
+    img {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &_body {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 27px;
+  }
+  &_footer {
+    border-top: 1px solid $Dark-gray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 85px;
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.profile, .profile_id{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_id{
+flex-direction: column;
+}
+
+.profile{
+  background-color: #fff;
+  width: 107px;
+  height: 107px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50%;
+  left : 50%;
+  transform: translate(-53px, 22px);
+
+  img{
+    border-radius: 50%;
+    width: 90%;
+    height: auto;
+  }
+}
+
+.text-dark{
+  color: $Very-dark-desaturated-blue;
+}
+
+.text-gray{
+  color: $Dark-gray;
+}
+.text-small{
+  font-size: 16px;
+}
+
+.bg{
+  position: absolute;
+  z-index: 1;
+
+  img{
+    width : 100%;
+    height :auto;
+  }
+}
+
+.bg_top{
+  top: -50%;
+  left: -25%;
+
+}
+
+.bg_bottom{
+
+  bottom: -50%;
+  right: -25%;
+}
+
